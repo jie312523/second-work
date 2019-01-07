@@ -1,0 +1,21 @@
+## 1）BitmapFactory.decodeFile(filename, options);
+   ----在这种情况下，我们就需要直接的替换filename了
+   
+   如果是存在resizing的情况：
+ final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(filename, options);
+
+        // Calculate inSampleSize
+        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+
+        // If we're running on Honeycomb or newer, try to use inBitmap
+        if (Utils.hasHoneycomb()) {
+            addInBitmapOptions(options, cache);
+        }
+
+        // Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeFile(filename, options);
+        
+   -----这个时候似乎是同时改变两个decodefile()中的filename的参数值
