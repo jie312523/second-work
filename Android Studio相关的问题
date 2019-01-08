@@ -1,0 +1,4 @@
+（1）关于如何生成签名的apk文件
+    主要是依赖下面的两个链接，但是按照下面两个链接生成的apk在用soot进行分析的时候，都会抛出异常，不知道是为什么？
+    https://blog.csdn.net/wyg1230/article/details/77529465/
+    https://blog.csdn.net/to_perfect/article/details/69048419
