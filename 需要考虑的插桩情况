@@ -23,3 +23,7 @@
    
 ## 2) BitmapFactory.decodeFileDescriptor(fileDescriptor, null, options);
       ----如果是这样的情况，就已经不能对参数进行替换了，而是要进行数据流分析，得到url的来源，然后进行替换
+      
+      
+      
+以上的这些插桩场景，感觉都是可以通过插入新的语句来进行替换的，插入事先准备好了的插桩方法，直接进行插入。
